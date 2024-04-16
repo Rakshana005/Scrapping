@@ -1,0 +1,11 @@
+library(robotstxt)
+library(rvest)
+link = "https://lithub.com/20-short-novels-to-stay-up-all-night-reading/"
+path = paths_allowed(link)
+web = read_html(link)
+View(web)
+novel = web  %>% html_node("p") %>% html_text()
+View(novel)
+n = data.frame(novel)
+View(n)
+write.dcf(t,"latest technology.doc")
